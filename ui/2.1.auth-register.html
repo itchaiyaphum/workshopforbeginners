@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign up - Workshop For Beginners</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex flex-column mt-5">
+        <div class="d-flex w-50 flex-column p-2 align-self-center">
+          <div class="w-100 text-center p-2">
+            <img
+              style="width: 50px"
+              src="../assets/img/workflow-mark-indigo-600.svg"
+            />
+          </div>
+          <h2 class="w-100 text-center">Create your FREE account</h2>
+          <p class="w-100 text-center">
+            It takes just 30 seconds. Or
+            <a href="/auth/login" class=""> sign in </a>
+          </p>
+        </div>
+
+        <div class="d-flex align-self-center w-50 p-2">
+          <div class="card w-100 mx-auto">
+            <div class="card-body">
+              <form>
+                <div class="d-flex w-100 justify-content-between mb-3">
+                  <div>
+                    <label for="inputFirstname" class="form-label"
+                      >Firstname</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputFirstname"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div>
+                    <label for="inputLastname" class="form-label"
+                      >Lastname</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputLastname"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputEmail" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="inputConfirmPassword" class="form-label"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputConfirmPassword"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="checkInformNewFeatures"
+                  />
+                  <label class="form-check-label" for="checkInformNewFeatures"
+                    >Inform me about new features and updates.</label
+                  >
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                  Register Now
+                </button>
+              </form>
+              <hr />
+              <div class="text-center">
+                <a href="/" class="link-secondary">Go back to homepage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
