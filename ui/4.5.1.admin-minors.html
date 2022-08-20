@@ -72,7 +72,9 @@
                 >
               </li>
               <li>
-                <a class="list-group-item" href="/ui/4.8.1.admin-userstudents.html"
+                <a
+                  class="list-group-item"
+                  href="/ui/4.8.1.admin-userstudents.html"
                   ><i class="bi-person-circle"></i> จัดการรายชื่อนักเรียน (User
                   Students)</a
                 >
@@ -217,8 +219,374 @@
             <div class="page-header mt-3">
               <div class="d-flex justify-content-between">
                 <h1>จัดการสาขางาน</h1>
+                <a
+                  class="btn btn-primary align-self-end"
+                  href="/ui/4.5.3.admin-minors-add.html"
+                >
+                  <i class="bi-person-plus-fill me-1"></i> เพิ่มข้อมูล
+                </a>
               </div>
             </div>
+            <!-- end: breadcrumb -->
+            <!-- START: MAIN CONTENT BODY -->
+            <form id="adminForm">
+              <div class="card mb-3" id="passwordSection">
+                <!-- start: filters -->
+                <div class="card-header">
+                  <div class="row">
+                    <!-- start: filter / search -->
+                    <div class="col-12 col-sm-5 mb-2">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="users_filter_search"
+                          id="search"
+                          value=""
+                          class="form-control"
+                          onchange="document.adminForm.submit();"
+                        />
+                        <button
+                          class="input-group-text"
+                          onclick="this.form.submit();"
+                        >
+                          <i class="bi-search"></i>
+                        </button>
+                        <button
+                          class="input-group-text"
+                          onclick="document.getElementById('search').value='';this.form.submit();"
+                        >
+                          <i class="bi-backspace"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <!-- end: filter / search -->
+                    <div class="col-12 col-sm-7">
+                      <div class="d-flex justify-content-end">
+                        <select
+                          class="form-select me-2"
+                          name="minors_filter_major"
+                          onchange="this.form.submit();"
+                        >
+                          <option value="all" selected="selected">
+                            - เลือกสาขาวิชาทั้งหมด -
+                          </option>
+                          <optgroup label="- วิทยาลัยเทคนิคชัยภูมิ">
+                            <option value="1">|-- เทคโนโลยีสารสนเทศ</option>
+                            <option value="2">|-- ไฟฟ้า</option>
+                            <option value="3">|-- อิเล็กทรอนิกส์</option>
+                          </optgroup>
+                        </select>
+                        <select
+                          class="form-select"
+                          name="minors_filter_status"
+                          onchange="this.form.submit();"
+                        >
+                          <option value="all" selected="selected">
+                            - แสดงสถานะทั้งหมด -
+                          </option>
+                          <option value="publish">เผยแพร่</option>
+                          <option value="unpublish">ไม่เผยแพร่</option>
+                          <option value="trash">อยู่ในถังขยะ</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end: filters -->
+                <div class="card-body">
+                  <div>
+                    <!-- start: table list data -->
+                    <div class="row d-none d-md-flex">
+                      <div class="col-1"><strong>#</strong></div>
+                      <div class="col-4"><strong>สาขางาน/สาขาวิชา</strong></div>
+                      <div class="col-4"><strong>สถานศึกษา</strong></div>
+                      <div class="col-1"><strong>สถานะ</strong></div>
+                      <div class="col-2"><strong>-</strong></div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>1
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50"
+                            >ชื่อสาขางาน/สาขาวิชา:</span
+                          >
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.5.2.admin-minors-edit.html"
+                              ><div>นักพัฒนาซอฟต์แวร์คอมพิวเตอร์</div>
+                              <div>เทคโนโลยีสารสนเทศ</div></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ชื่อสถานศึกษา:</span>
+                          <div class="d-block">วิทยาลัยเทคนิคชัยภูมิ</div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.5.2.admin-minors-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>2
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50"
+                            >ชื่อสาขางาน/สาขาวิชา:</span
+                          >
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.5.2.admin-minors-edit.html"
+                              ><div>
+                                การโปรแกรมคอมพิวเตอร์ เว็บ และอุปกรณ์เคลื่อนที่
+                              </div>
+                              <div>เทคโนโลยีสารสนเทศ</div></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ชื่อสถานศึกษา:</span>
+                          <div class="d-block">วิทยาลัยเทคนิคชัยภูมิ</div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.5.2.admin-minors-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>3
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50"
+                            >ชื่อสาขางาน/สาขาวิชา:</span
+                          >
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.5.2.admin-minors-edit.html"
+                              ><div>คอมพิวเตอร์กราฟิก เกม และแอนิเมชัน</div>
+                              <div>เทคโนโลยีสารสนเทศ</div></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ชื่อสถานศึกษา:</span>
+                          <div class="d-block">วิทยาลัยเทคนิคชัยภูมิ</div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.5.2.admin-minors-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>4
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50"
+                            >ชื่อสาขางาน/สาขาวิชา:</span
+                          >
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.5.2.admin-minors-edit.html"
+                              ><div>อิเล็กทรอนิกส์อุตสาหกรรม</div>
+                              <div>อิเล็กทรอนิกส์</div></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ชื่อสถานศึกษา:</span>
+                          <div class="d-block">วิทยาลัยเทคนิคชัยภูมิ</div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.5.2.admin-minors-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>5
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50"
+                            >ชื่อสาขางาน/สาขาวิชา:</span
+                          >
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.5.2.admin-minors-edit.html"
+                              ><div>ไฟฟ้ากำลัง</div>
+                              <div>ไฟฟ้า</div></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ชื่อสถานศึกษา:</span>
+                          <div class="d-block">วิทยาลัยเทคนิคชัยภูมิ</div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.5.2.admin-minors-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <!-- end: table list data -->
+                    <!-- start: pagination -->
+                    <div id="pagination" class="row gy-3">
+                      <div class="col-12 col-sm-6 text-center">
+                        <span>Showing:</span>
+                        <select class="form-select d-inline" style="width: 15%">
+                          <option value="5" selected>5</option>
+                          <option value="10">10</option>
+                          <option value="10">30</option>
+                          <option value="10">50</option>
+                          <option value="10">100</option>
+                        </select>
+                        <span>of</span>
+                        <span>200</span>
+                      </div>
+                      <div class="col-12 col-sm-6 text-center">
+                        <a class="btn btn-outline-secondary" href="#">Prev</a>
+                        <a class="btn btn-primary" href="#">1</a>
+                        <a class="btn btn-secondary" href="#">2</a>
+                        <a class="btn btn-secondary" href="#">3</a>
+                        <a class="btn btn-secondary" href="#">4</a>
+                        <a class="btn btn-secondary" href="#">5</a>
+                        <a class="btn btn-outline-secondary" href="#">Last</a>
+                      </div>
+                    </div>
+                    <!-- end: pagination -->
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- END: MAIN CONTENT BODY -->
           </div>
         </div>
       </div>
