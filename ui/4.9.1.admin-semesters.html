@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin > Majors [add] - Workshop For Beginners</title>
+    <title>Admin > Semesters - Workshop For Beginners</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/custom.css" />
     <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css" />
@@ -40,7 +40,9 @@
                 >
               </li>
               <li>
-                <a class="list-group-item" href="/ui/4.9.1.admin-semesters.html"
+                <a
+                  class="list-group-item active"
+                  href="/ui/4.9.1.admin-semesters.html"
                   ><i class="bi-mortarboard"></i> ภาคการศึกษา (Semesters)</a
                 >
               </li>
@@ -55,9 +57,7 @@
                 >
               </li>
               <li>
-                <a
-                  class="list-group-item active"
-                  href="/ui/4.4.1.admin-majors.html"
+                <a class="list-group-item" href="/ui/4.4.1.admin-majors.html"
                   ><i class="bi-diagram-3"></i> สาขาวิชา (Majors)</a
                 >
               </li>
@@ -179,7 +179,10 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/ui/4.9.1.admin-semesters.html">
+                  <a
+                    class="nav-link active"
+                    href="/ui/4.9.1.admin-semesters.html"
+                  >
                     <i class="bi-mortarboard"></i> ภาคการศึกษา (Semesters)
                   </a>
                 </li>
@@ -194,7 +197,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/ui/4.4.1.admin-majors.html">
+                  <a class="nav-link" href="/ui/4.4.1.admin-majors.html">
                     <i class="bi-diagram-3"></i> สาขาวิชา (Majors)
                   </a>
                 </li>
@@ -225,136 +228,193 @@
           <!-- end: left menu -->
           <!-- start: main content -->
           <div class="col-lg-9">
-            <form
-              id="adminForm"
-              class="needs-validation"
-              action="/ui/4.4.1.admin-majors.html"
-              novalidate
-            >
-              <!-- start: breadcrumb -->
-              <div class="page-header mt-3">
-                <div class="d-flex justify-content-between">
-                  <h1>จัดการสาขาวิชา [เพิ่ม]</h1>
-                  <div class="align-self-end">
-                    <a
-                      class="btn btn-outline-secondary align-self-end mb-2"
-                      href="/ui/4.4.1.admin-majors.html"
-                    >
-                      <i class="bi-x me-1"></i> ยกเลิก
-                    </a>
-                    <button class="btn btn-primary mb-2" type="submit">
-                      <i class="bi-save me-1"></i> บันทึกข้อมูล
-                    </button>
-                  </div>
-                </div>
+            <!-- start: breadcrumb -->
+            <div class="page-header mt-3">
+              <div class="d-flex justify-content-between">
+                <h1>จัดการภาคการศึกษา</h1>
+                <a
+                  class="btn btn-primary align-self-end"
+                  href="/ui/4.9.3.admin-semesters-add.html"
+                >
+                  <i class="bi-person-plus-fill me-1"></i> เพิ่มข้อมูล
+                </a>
               </div>
-              <!-- end: breadcrumb -->
-              <!-- START: MAIN CONTENT BODY -->
-              <div class="card mb-5">
-                <div class="card-body">
-                  <div class="row mb-4">
-                    <label
-                      for="majorNameLabel"
-                      class="col-sm-3 col-form-label form-label"
-                      >ชื่อสาขาวิชา</label
-                    >
-                    <div class="col-sm-9">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="majorName"
-                        id="majorNameLabel"
-                        value=""
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <label
-                      for="collegeNameLabel"
-                      class="col-sm-3 col-form-label form-label"
-                      >ชื่อสถานศึกษา</label
-                    >
-                    <div class="col-sm-9">
-                      <select
-                        class="form-select me-2"
-                        name="collegeName"
-                        id="collegeNameLabel"
-                        required
-                      >
-                        <option value="" selected="selected">
-                          - เลือกสถานศึกษาทั้งหมด -
-                        </option>
-                        <option value="1">วิทยาลัยเทคนิคชัยภูมิ</option>
-                        <option value="2">วิทยาลัยเทคนิคเลย</option>
-                        <option value="3">วิทยาลัยเทคนิคน่าน</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div id="gender" class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label"
-                      >สถานะ</label
-                    >
-
-                    <div class="col-sm-9">
-                      <div class="input-group input-group-sm-vertical">
-                        <label class="form-control text-success" for="status1">
-                          <span class="form-check">
-                            <input
-                              type="radio"
-                              class="form-check-input"
-                              name="status"
-                              id="status1"
-                              checked=""
-                              value="1"
-                            />
-                            <span class="form-check-label"
-                              ><i class="bi-check"></i> เผยแพร่</span
-                            >
-                          </span>
-                        </label>
-
-                        <label class="form-control text-danger" for="status2">
-                          <span class="form-check">
-                            <input
-                              type="radio"
-                              class="form-check-input"
-                              name="status"
-                              id="status2"
-                              value="0"
-                            />
-                            <span class="form-check-label"
-                              ><i class="bi-x"></i> ไม่เผยแพร่</span
-                            >
-                          </span>
-                        </label>
-
-                        <label
-                          class="form-control text-secondary"
-                          for="status3"
+            </div>
+            <!-- end: breadcrumb -->
+            <!-- START: MAIN CONTENT BODY -->
+            <form id="adminForm">
+              <div class="card mb-3">
+                <!-- start: filters -->
+                <div class="card-header">
+                  <div class="row">
+                    <!-- start: filter / search -->
+                    <div class="col-12 col-sm-5 mb-2">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="semester_filter_search"
+                          id="search"
+                          value=""
+                          class="form-control"
+                          onchange="document.adminForm.submit();"
+                        />
+                        <button
+                          class="input-group-text"
+                          onclick="this.form.submit();"
                         >
-                          <span class="form-check">
-                            <input
-                              type="radio"
-                              class="form-check-input"
-                              name="status"
-                              id="status3"
-                              value="-1"
-                            />
-                            <span class="form-check-label"
-                              ><i class="bi-trash"></i> อยู่ในถังขยะ</span
-                            >
-                          </span>
-                        </label>
+                          <i class="bi-search"></i>
+                        </button>
+                        <button
+                          class="input-group-text"
+                          onclick="document.getElementById('search').value='';this.form.submit();"
+                        >
+                          <i class="bi-backspace"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <!-- end: filter / search -->
+                    <div class="col-12 col-sm-7">
+                      <div class="d-flex justify-content-end">
+                        <select
+                          class="form-select"
+                          name="semesters_filter_status"
+                          onchange="this.form.submit();"
+                        >
+                          <option value="all" selected="selected">
+                            - แสดงสถานะทั้งหมด -
+                          </option>
+                          <option value="publish">เผยแพร่</option>
+                          <option value="unpublish">ไม่เผยแพร่</option>
+                          <option value="trash">อยู่ในถังขยะ</option>
+                        </select>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- end: filters -->
+                <div class="card-body">
+                  <div>
+                    <!-- start: table list data -->
+                    <div class="row d-none d-md-flex">
+                      <div class="col-1"><strong>#</strong></div>
+                      <div class="col-8"><strong>ภาคการศึกษา</strong></div>
+                      <div class="col-1"><strong>สถานะ</strong></div>
+                      <div class="col-2"><strong>-</strong></div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>1
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-8">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ภาคการศึกษา:</span>
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.9.2.admin-semesters-edit.html"
+                              >ภาคเรียนที่ 1/2565</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-success" href="#"
+                            ><i class="bi-check"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.9.2.admin-semesters-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <div class="row gy-2">
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ลำดับที่: </span>2
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-8">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">ภาคการศึกษา:</span>
+                          <div class="d-block">
+                            <a
+                              class="link-primary"
+                              href="/ui/4.9.2.admin-semesters-edit.html"
+                              >ภาคเรียนที่ 2/2565</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-1">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">สถานะ: </span>
+                          <a class="btn btn-sm btn-danger" href="#"
+                            ><i class="bi-x"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <div class="d-flex">
+                          <span class="d-md-none w-50">แก้ไข: </span>
+                          <a
+                            class="btn btn-sm btn-outline-secondary me-2"
+                            href="/ui/4.9.2.admin-semesters-edit.html"
+                            ><i class="bi-pen"></i
+                          ></a>
+                          <a class="btn btn-sm btn-outline-secondary" href="#"
+                            ><i class="bi-trash"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="m-2" />
+                    <!-- end: table list data -->
+                    <!-- start: pagination -->
+                    <div id="pagination" class="row gy-3">
+                      <div class="col-12 col-sm-6 text-center">
+                        <span>Showing:</span>
+                        <select class="form-select d-inline" style="width: 15%">
+                          <option value="5" selected>5</option>
+                          <option value="10">10</option>
+                          <option value="10">30</option>
+                          <option value="10">50</option>
+                          <option value="10">100</option>
+                        </select>
+                        <span>of</span>
+                        <span>200</span>
+                      </div>
+                      <div class="col-12 col-sm-6 text-center">
+                        <a class="btn btn-outline-secondary" href="#">Prev</a>
+                        <a class="btn btn-primary" href="#">1</a>
+                        <a class="btn btn-secondary" href="#">2</a>
+                        <a class="btn btn-secondary" href="#">3</a>
+                        <a class="btn btn-secondary" href="#">4</a>
+                        <a class="btn btn-secondary" href="#">5</a>
+                        <a class="btn btn-outline-secondary" href="#">Last</a>
+                      </div>
+                    </div>
+                    <!-- end: pagination -->
+                  </div>
+                </div>
               </div>
-              <!-- END: MAIN CONTENT BODY -->
-              <input type="hidden" name="id" value="0" />
             </form>
+            <!-- END: MAIN CONTENT BODY -->
           </div>
         </div>
       </div>

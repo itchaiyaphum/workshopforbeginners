@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin > Majors [add] - Workshop For Beginners</title>
+    <title>Admin > Semesters [add] - Workshop For Beginners</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/custom.css" />
     <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css" />
@@ -40,12 +40,16 @@
                 >
               </li>
               <li>
-                <a class="list-group-item" href="/ui/4.9.1.admin-semesters.html"
+                <a
+                  class="list-group-item active"
+                  href="/ui/4.9.1.admin-semesters.html"
                   ><i class="bi-mortarboard"></i> ภาคการศึกษา (Semesters)</a
                 >
               </li>
               <li>
-                <a class="list-group-item" href="/ui/4.7.1.admin-levels.html"
+                <a
+                  class="list-group-item "
+                  href="/ui/4.7.1.admin-levels.html"
                   ><i class="bi-reception-4"></i> ระดับชั้น (Levels)</a
                 >
               </li>
@@ -55,9 +59,7 @@
                 >
               </li>
               <li>
-                <a
-                  class="list-group-item active"
-                  href="/ui/4.4.1.admin-majors.html"
+                <a class="list-group-item" href="/ui/4.4.1.admin-majors.html"
                   ><i class="bi-diagram-3"></i> สาขาวิชา (Majors)</a
                 >
               </li>
@@ -179,12 +181,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/ui/4.9.1.admin-semesters.html">
+                  <a class="nav-link active" href="/ui/4.9.1.admin-semesters.html">
                     <i class="bi-mortarboard"></i> ภาคการศึกษา (Semesters)
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/ui/4.7.1.admin-levels.html">
+                  <a class="nav-link " href="/ui/4.7.1.admin-levels.html">
                     <i class="bi-reception-4"></i> ระดับชั้น (Levels)
                   </a>
                 </li>
@@ -194,7 +196,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/ui/4.4.1.admin-majors.html">
+                  <a class="nav-link" href="/ui/4.4.1.admin-majors.html">
                     <i class="bi-diagram-3"></i> สาขาวิชา (Majors)
                   </a>
                 </li>
@@ -228,17 +230,17 @@
             <form
               id="adminForm"
               class="needs-validation"
-              action="/ui/4.4.1.admin-majors.html"
+              action="/ui/4.9.1.admin-semesters.html"
               novalidate
             >
               <!-- start: breadcrumb -->
               <div class="page-header mt-3">
                 <div class="d-flex justify-content-between">
-                  <h1>จัดการสาขาวิชา [เพิ่ม]</h1>
+                  <h1>จัดการภาคการศึกษา[เพิ่ม]</h1>
                   <div class="align-self-end">
                     <a
                       class="btn btn-outline-secondary align-self-end mb-2"
-                      href="/ui/4.4.1.admin-majors.html"
+                      href="/ui/4.9.1.admin-semesters.html"
                     >
                       <i class="bi-x me-1"></i> ยกเลิก
                     </a>
@@ -254,41 +256,19 @@
                 <div class="card-body">
                   <div class="row mb-4">
                     <label
-                      for="majorNameLabel"
+                      for="semesterNameLabel"
                       class="col-sm-3 col-form-label form-label"
-                      >ชื่อสาขาวิชา</label
+                      >ภาคการศึกษา</label
                     >
                     <div class="col-sm-9">
                       <input
                         type="text"
                         class="form-control"
-                        name="majorName"
-                        id="majorNameLabel"
+                        name="semesterName"
+                        id="semesterNameLabel"
                         value=""
                         required
                       />
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <label
-                      for="collegeNameLabel"
-                      class="col-sm-3 col-form-label form-label"
-                      >ชื่อสถานศึกษา</label
-                    >
-                    <div class="col-sm-9">
-                      <select
-                        class="form-select me-2"
-                        name="collegeName"
-                        id="collegeNameLabel"
-                        required
-                      >
-                        <option value="" selected="selected">
-                          - เลือกสถานศึกษาทั้งหมด -
-                        </option>
-                        <option value="1">วิทยาลัยเทคนิคชัยภูมิ</option>
-                        <option value="2">วิทยาลัยเทคนิคเลย</option>
-                        <option value="3">วิทยาลัยเทคนิคน่าน</option>
-                      </select>
                     </div>
                   </div>
 
@@ -296,7 +276,6 @@
                     <label class="col-sm-3 col-form-label form-label"
                       >สถานะ</label
                     >
-
                     <div class="col-sm-9">
                       <div class="input-group input-group-sm-vertical">
                         <label class="form-control text-success" for="status1">
